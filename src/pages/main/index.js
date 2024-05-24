@@ -20,21 +20,21 @@ const MainPage = () => {
   };
 
   const handleClick = async () => {
-    // await diagnose(
-    //   {
-    //     query: query,
-    //   },
-    //   (response) => {
-    //     setResults(response.message);
-    //     setLoading(false);
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //     triggerShowError(4500);
-    //     setResults(null);
-    //     setLoading(false);
-    //   }
-    // );
+    await diagnose(
+      {
+        query: query,
+      },
+      (response) => {
+        setResults(response.message);
+        setLoading(false);
+      },
+      (error) => {
+        console.log(error);
+        triggerShowError(4500);
+        setResults(null);
+        setLoading(false);
+      }
+    );
   };
   return (
     <Container fluid>
@@ -126,10 +126,16 @@ const MainPage = () => {
               )}
             </Row>
           </Card.Body>
-          <Card.Footer className={`${styles.disclaimer} w-100 text-muted`}>
-            The results provided by Baizhu (Google Gemini) are for informational
-            purposes only. Please consult with a qualified health adviser or
-            medical professional for personalized advice and treatment.
+          <Card.Footer
+            className={`${styles.disclaimer} text-center w-100 text-muted`}>
+            <Row>
+              The results provided by Baizhu are for informational purposes
+              only. Please consult with a qualified health adviser or medical
+              professional for personalized advice and treatment.
+            </Row>
+            <span className={styles.text}>
+              Powered by Google Gemini. Copyright © Hoyoverse.
+            </span>
           </Card.Footer>
         </Card>
       </Row>
