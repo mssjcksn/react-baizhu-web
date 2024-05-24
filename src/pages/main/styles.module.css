@@ -1,0 +1,36 @@
+.icon {
+  width: 90px;
+}
+
+.name {
+  font-family: "Degradasi";
+}
+
+.description {
+  font-family: "Poppins-Regular";
+}
+
+.text {
+  font-family: "Poppins-Medium";
+}
+
+.disclaimer {
+  font-family: "Poppins-Regular";
+  font-size: 0.8em;
+}
+
+.loading {
+  color: #7ba05b;
+}
+
+.error {
+  font-family: "Poppins-Medium";
+  color: #960018;
+}
+
+.button {
+  font-family: "Poppins-SemiBold" !important;
+  background-color: #7ba05b !important;
+  border: none !important;
+  border-radius: 20px !important;
+}
