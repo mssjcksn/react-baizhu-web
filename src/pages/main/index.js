@@ -25,7 +25,7 @@ const MainPage = () => {
         query: query,
       },
       (response) => {
-        setResults(response.message);
+        setResults(response);
         setLoading(false);
       },
       (error) => {
@@ -104,12 +104,12 @@ const MainPage = () => {
                   className={`d-flex justify-content-start align-items-center`}>
                   <Col md={2}>
                     <img
-                      src={resultIcon}
+                      src={results?.is_valid === true ? resultIcon : errorIcon}
                       alt="Error Icon"
                       style={{ width: "90px" }}
                     />
                   </Col>
-                  <Col>{results}</Col>
+                  <Col>{results?.message}</Col>
                 </Row>
               )}
 
@@ -128,7 +128,7 @@ const MainPage = () => {
           </Card.Body>
           <Card.Footer
             className={`${styles.disclaimer} text-center w-100 text-muted`}>
-            <Row>
+            <Row className="mb-2">
               The results provided by Baizhu are for informational purposes
               only. Please consult with a qualified health adviser or medical
               professional for personalized advice and treatment.
